@@ -1,0 +1,1 @@
+..\..\.venv\Scripts\python.exe -m PyQt5.uic.pyuic -x QMainWindow.ui -o QMainWindow.py
