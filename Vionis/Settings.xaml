@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Vionis.Settings">
+
+    <ScrollView>
+        <Grid ColumnSpacing="50" Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <VerticalStackLayout Grid.Row="0" Grid.Column="0">
+                <Label Text="Общие"/>
+                <Grid ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Switch Grid.Column="0" Grid.Row="0"/>
+                    <Label Text="Запускать при старте Windows" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start"/>
+                    <Switch Grid.Column="0" Grid.Row="1"/>
+                    <Label Text="Всплывающие уведомления" Grid.Column="1" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+                    <Switch Grid.Column="0" Grid.Row="2"/>
+                    <Label Text="Приглушить голос" Grid.Column="1" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Start"/>
+                    <Label Text="Тема" x:Name="labelTheme" Grid.Column="0" Grid.Row="3" VerticalOptions="Center"/>
+                    <Picker Grid.Column="1" Grid.Row="3"  VerticalOptions="Center" x:Name="theme" SelectedIndexChanged="Picker_SelectedIndexChanged" >
+                        <Picker.Items>
+                            <x:String>Системная</x:String>
+                            <x:String>Светлая</x:String>
+                            <x:String>Темная</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Grid>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="0" Grid.Column="1">
+                <Label Text="Запись голоса"/>
+                <Picker>
+                    <Picker.Items>
+                        <x:String>Временно</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Grid ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Switch Grid.Column="0" Grid.Row="0"/>
+                    <Label Text="Запись только при нажатии" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start"/>
+                    <Switch Grid.Column="0" Grid.Row="1"/>
+                    <Label Text="Выключать звук только при зажатии клавишиы" Grid.Column="2" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+                    <Switch Grid.Column="0" Grid.Row="2"/>
+                    <Label Text="Глобальные хоткеи управления настройками" Grid.Column="2" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Start"/>
+                </Grid>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="1" Grid.Column="0">
+                <Label Text="Голосовые команды"/>
+                <Picker>
+                    <Picker.Items>
+                        <x:String>Временно</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Picker>
+                    <Picker.Items>
+                        <x:String>Временно</x:String>
+                    </Picker.Items>
+                </Picker>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+                <Label Text="Сервис произношения текста"/>
+                <Picker>
+                    <Picker.Items>
+                        <x:String>Временно</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Picker>
+                    <Picker.Items>
+                        <x:String>Временно</x:String>
+                    </Picker.Items>
+                </Picker>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="2" Grid.Column="0">
+                <Label Text="Голосовые команды"/>
+                <Grid ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Switch Grid.Column="0" Grid.Row="0"/>
+                    <Label Text="Голосовые команды" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start"/>
+                    <Switch Grid.Column="0" Grid.Row="1"/>
+                    <Label Text="Общение" Grid.Column="2" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+                    <Switch Grid.Column="0" Grid.Row="2"/>
+                    <Label Text="Внешний источник фраз" Grid.Column="2" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Start"/>
+                </Grid> 
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="2" Grid.Column="1">
+                <Label Text="Голосовой набор текста"/>
+                <Grid ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Switch Grid.Column="0" Grid.Row="0"/>
+                    <Label Text="Голосовой набор текста" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start"/>
+                    <Switch Grid.Column="0" Grid.Row="1"/>
+                    <Label Text="Автоматическая орфография" Grid.Column="2" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+                    <Switch Grid.Column="0" Grid.Row="2"/>
+                    <Label Text="Клавиатурный ввод текста" Grid.Column="2" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Start"/>
+                </Grid>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="3" Grid.Column="1">
+                <Label Text="Ограничения"/>
+                <Grid ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Switch Grid.Column="0" Grid.Row="0"/>
+                    <Label Text="Запретить голосовые команды" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Start"/>
+                    <Switch Grid.Column="0" Grid.Row="1"/>
+                    <Label Text="Запретить дикто    вку текста" Grid.Column="2" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+                </Grid>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>
