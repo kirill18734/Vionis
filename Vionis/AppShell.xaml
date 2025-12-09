@@ -5,9 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:Vionis"
     Title="Vionis">
-
     <TabBar>
-        <Tab  Title="Команды" >  
+        <Tab  Title="Команды" >
             <ShellContent ContentTemplate="{DataTemplate views:Commands}" />
         </Tab>
         <Tab  Title="Настройки" >

@@ -7,12 +7,13 @@ namespace Vionis
         public App()
         {
             InitializeComponent();
-            
+
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new AppShell());
+            return new Title();
+            //return new Window(new AppShell());
         }
     }
 }
