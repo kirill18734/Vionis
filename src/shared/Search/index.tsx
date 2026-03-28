@@ -8,7 +8,7 @@ function Search({ value, setValue }) {
     <div className={styles.search}>
       <IconSearch />
       <input
-        type="search"
+        type="text"
         placeholder="Поиск..."
         value={value}
         onChange={(e) => setValue(e.target.value)}

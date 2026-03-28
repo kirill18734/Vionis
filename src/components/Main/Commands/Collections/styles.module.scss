@@ -37,9 +37,9 @@ $colorActive: light-dark($carbon-black, $bright-snow);
       color: $colorActive;
     }
 
-    // svg {
-    //   width: 2em;
-    // }
+    svg {
+      width: 2em;
+    }
 
     label {
       transform: rotate(-90deg);

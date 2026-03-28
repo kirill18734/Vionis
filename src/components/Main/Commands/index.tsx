@@ -7,7 +7,7 @@ function Commands() {
   return (
     <div className={styles.commands}>
       <Collections />
-      {/* <Documents /> */}
+      <Documents />
     </div>
   );
 }

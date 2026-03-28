@@ -3,13 +3,19 @@
 .search {
   display: flex;
   align-items: center;
-  border: 0.1em solid $pale-slate-2;
-  border-radius: 1em;
+  justify-content: flex-start;
   width: 100%;
+  padding: 0.3em 0.5em;
+  border: 0.1em solid $pale-slate-2;
   color: $pale-slate-2;
-  padding: 0.5em;
-  svg {
-    width: 1.5em;
+
+  input[type="text"] {
+    cursor: default;
+    width: 100%;
+    margin-left: 0.3em;
+    background-color: transparent;
+    color: inherit;
+    border: 0;
   }
 
   &:focus-within {
@@ -17,19 +23,9 @@
     color: light-dark($carbon-black, $bright-snow);
   }
 
-  input {
-    display: block;
-    border: none;
-    outline: none;
-    background: transparent;
-    color: inherit;
-
-    /* убираем нативный крестик */
-    &::-webkit-search-cancel-button {
-      display: none;
-    }
+  svg {
+    width: 1.5em;
   }
-
   .clear {
     right: 0.6em;
     font-size: 1.2em;

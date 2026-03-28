@@ -8,7 +8,8 @@ export function MainContect({ children }) {
   const [searchCol, setSearchCol] = useState("");
 
   const [documents, setDocuments] = useState({});
-  const [activeCat, setActiveCat] = useState();
+  const [activeDoc, setActiveDoc] = useState();
+  const [searchDoc, setSearchDoc] = useState("");
 
   const [activeTab, setActiveTab] = useState(0);
 
@@ -25,9 +26,10 @@ export function MainContect({ children }) {
         setDocuments,
         searchCol,
         setSearchCol,
-
-        activeCat,
-        setActiveCat,
+        searchDoc,
+        setSearchDoc,
+        activeDoc,
+        setActiveDoc,
       }}
     >
       {children}
