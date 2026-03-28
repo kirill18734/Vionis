@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // flex: 0 0 auto; /* Растягивается и заполняет всё свободное пространство */
+  svg {
+    width: 2em;
+  }
+}

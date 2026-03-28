@@ -1,0 +1,21 @@
+@use "/src/variables" as *;
+
+.add {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.5em;
+  justify-content: center;
+
+  width: 100%;
+  padding: 0.5em;
+  svg {
+    width: 1.5em;
+  }
+  &:hover {
+    background-color: $gunmetal;
+  }
+  &:active {
+    background-color: $iron-grey;
+  }
+}

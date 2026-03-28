@@ -1,0 +1,39 @@
+@use "/src/variables" as *;
+
+.search {
+  display: flex;
+  align-items: center;
+  border: 0.1em solid $pale-slate-2;
+  border-radius: 1em;
+  width: 100%;
+  color: $pale-slate-2;
+  padding: 0.5em;
+  svg {
+    width: 1.5em;
+  }
+
+  &:focus-within {
+    border-color: light-dark($carbon-black, $bright-snow);
+    color: light-dark($carbon-black, $bright-snow);
+  }
+
+  input {
+    display: block;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: inherit;
+
+    /* убираем нативный крестик */
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+  }
+
+  .clear {
+    right: 0.6em;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: inherit;
+  }
+}

@@ -1,0 +1,17 @@
+.commands {
+  display: flex;
+  align-items: center;
+  .collections {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    .collection-item {
+      display: flex;
+      align-items: center;
+      .switch {
+        transform: rotate(-90deg);
+        font-size: 0.5em;
+      }
+    }
+  }
+}

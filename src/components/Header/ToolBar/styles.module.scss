@@ -1,0 +1,25 @@
+@use "/src/variables" as *;
+
+.toolbar {
+  display: flex;
+  align-items: center;
+
+  div {
+    &:hover {
+      background-color: light-dark($alabaster-grey, $iron-grey);
+    }
+    &:active {
+      background-color: light-dark($pale-slate, $gunmetal);
+    }
+    &.close {
+      &:hover {
+        background-color: $primary-scarlet;
+        color: $bright-snow;
+      }
+      &:active {
+        background-color: $flag-red;
+        color: $bright-snow;
+      }
+    }
+  }
+}

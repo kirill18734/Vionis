@@ -1,0 +1,58 @@
+@use "./variables" as *;
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  border: 0.1em solid $pale-slate-2;
+  border-radius: 1em;
+
+  padding: 0.3em 0.8em;
+  color: $pale-slate-2;
+
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+
+  &:focus-within {
+    border-color: light-dark($carbon-black, $bright-snow);
+    color: light-dark($carbon-black, $bright-snow);
+  }
+
+  input {
+    flex: 1;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    padding: 0.3em 1.8em 0.3em 0.3em;
+    color: inherit;
+
+    &::placeholder {
+      opacity: 0.6;
+    }
+
+    /* убираем нативный крестик */
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+  }
+
+  .icon__search {
+    width: 1.5em;
+    margin-right: 0.4em;
+  }
+  .icon__close {
+    width: 1.2em;
+  }
+  &__clear {
+    position: absolute;
+    right: 0.6em;
+    border: none;
+    background: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: inherit;
+  }
+}
