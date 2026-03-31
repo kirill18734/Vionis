@@ -5,9 +5,4 @@ body {
   font-size: 1.5em;
   color: light-dark($carbon-black, $bright-snow);
   background-color: light-dark($bright-snow, $carbon-black);
-  #root {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
 }

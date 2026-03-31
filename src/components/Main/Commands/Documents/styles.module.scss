@@ -10,10 +10,71 @@ $colorActive: light-dark($carbon-black, $bright-snow);
   width: 100%;
   .document {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    flex-direction: column;
     width: 100%;
-    padding: 0.3em 0.5em;
-    color: $colorDefault;
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0.3em 0.5em;
+      color: $colorDefault;
+      svg {
+        width: 1.5em;
+      }
+      input[type="text"] {
+        &.read {
+          border: 1px solid $colorDefault;
+          cursor: auto;
+        }
+        cursor: default;
+        width: 100%;
+        margin-left: 0.3em;
+        background-color: transparent;
+        color: inherit;
+        border: 0;
+      }
+      &.active {
+        border: 1px solid $colorDefault;
+        border-left: none;
+        color: $colorActive;
+      }
+
+      label {
+        transform: rotate(-90deg);
+        font-size: 0.5em;
+      }
+
+      .close {
+        margin-left: auto;
+        cursor: pointer;
+        &:hover {
+          background-color: $primary-scarlet;
+          color: $bright-snow;
+        }
+        &:active {
+          background-color: $flag-red;
+          color: $bright-snow;
+        }
+      }
+    }
+    .add {
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      gap: 0.5em;
+      justify-content: center;
+
+      width: 100%;
+      padding: 0.5em;
+      svg {
+        width: 1.5em;
+      }
+      &:hover {
+        background-color: $gunmetal;
+      }
+      &:active {
+        background-color: $iron-grey;
+      }
+    }
   }
 }

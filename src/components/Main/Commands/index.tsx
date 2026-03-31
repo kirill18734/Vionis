@@ -1,13 +1,13 @@
-import Collections from "./Collections";
-import Documents from "./Documents";
+// import Collections from "./Collections";
+// import Documents from "./Documents";
 
 import styles from "./styles.module.scss";
 
 function Commands() {
   return (
     <div className={styles.commands}>
-      <Collections />
-      <Documents />
+      {/* <Collections />
+      <Documents /> */}
     </div>
   );
 }

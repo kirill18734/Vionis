@@ -27,21 +27,21 @@ function Collections() {
     setDocuments,
   } = useAppContext();
 
-  const stateElem = (e) => {
+  const state = (e) => {
     const code = e.code;
 
     // редактирование
-    if (code == "F2") editElem();
+    if (code == "F2") edit();
 
     // сохранение
-    if (code == "Enter") saveValue();
+    if (code == "Enter") save();
 
     // отмена
     if (code == "Escape") cancelElem();
   };
 
   // режим редактирования
-  const editElem = () => {
+  const edit = () => {
     setTempValue(collections[activeCol].name);
     setRead(false);
   };
@@ -53,7 +53,7 @@ function Collections() {
   };
 
   // сохранение
-  const saveValue = () => {
+  const save = () => {
     if (tempValue) {
       const newName = {
         [activeCol]: { ...collections[activeCol], name: tempValue },
@@ -70,12 +70,11 @@ function Collections() {
     const newActive = {
       [activeCol]: { ...collections[activeCol], active: checked },
     };
-    console.log(newActive);
     setCollections({ ...collections, ...newActive });
   };
 
   // добавление
-  const addCollection = () => {
+  const add = () => {
     const newKey = uuidv4();
     const newCollection = {
       [newKey]: {
@@ -86,10 +85,11 @@ function Collections() {
     };
 
     const newDocument = {
-      [newKey]: {
-        id: uuidv4(),
+      [uuidv4()]: {
+        idCol: newKey,
         name: "Новая категория",
         active: true,
+        hide: false,
       },
     };
 
@@ -100,15 +100,17 @@ function Collections() {
     setDocuments(newDocuments);
   };
 
-  const deleteCollection = () => {
+  const deleted = () => {
     const listKeys = Object.keys(collections);
     const currentIndex = listKeys.findIndex((id) => id == activeCol);
     const nextItem = listKeys[currentIndex + 1] || listKeys[currentIndex - 1];
 
     const newCollection = collections;
     delete newCollection[activeCol];
-
+    const newDocuments = documents;
+    delete newDocuments[activeCol];
     setCollections(newCollection);
+    setDocuments(newDocuments);
     setActiveCol(nextItem);
   };
 
@@ -125,9 +127,10 @@ function Collections() {
               [styles.active]: activeCol == id,
             })}
             tabIndex={0} // позволяет получать фокус
-            onKeyDown={stateElem}
+            onKeyDown={state}
             onClick={() => activeCol !== id && setActiveCol(id)}
             key={id}
+            role="menu"
           >
             <Toggle checked={data.active} setChecked={setCkecked} />
             {activeCol == id ? <FolderOpen /> : <FolderClose />}
@@ -137,9 +140,9 @@ function Collections() {
                 [styles.read]: activeCol == id && !read,
               })}
               value={activeCol == id ? tempValue || data.name : data.name}
-              onDoubleClick={editElem}
+              onDoubleClick={edit}
               onChange={(e) => setTempValue(e.target.value)}
-              onBlur={saveValue}
+              onBlur={save}
               readOnly={read}
             />
             {activeCol == id && (
@@ -147,7 +150,7 @@ function Collections() {
                 className={styles.close}
                 title="Удалить
 Зажмите для удаления"
-                onClick={deleteCollection}
+                onClick={deleted}
               >
                 <Close />
               </div>
@@ -155,7 +158,7 @@ function Collections() {
           </div>
         ))}
 
-      <div className={styles.add} onClick={addCollection}>
+      <div className={styles.add} onClick={add}>
         <Add />
         <span>Добавить коллекцию</span>
       </div>
