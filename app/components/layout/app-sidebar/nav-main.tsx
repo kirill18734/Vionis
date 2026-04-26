@@ -1,5 +1,10 @@
 import { Link, useLocation } from "react-router";
-import { SidebarMenuButton } from "@/components/ui/sidebar";
+import {
+  SidebarContent,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+} from "@/components/ui/sidebar";
 import type { Icon } from "@tabler/icons-react";
 
 export function NavMain({
@@ -12,12 +17,24 @@ export function NavMain({
   }[];
 }) {
   let location = useLocation();
-  return items.map((item, i) => (
-    <SidebarMenuButton asChild isActive={location.pathname == item.url} key={i}>
-      <Link to={item.url}>
-        {item.icon && <item.icon />}
-        {item.title}
-      </Link>
-    </SidebarMenuButton>
-  ));
+  return (
+    <SidebarContent className="justify-center">
+      <SidebarMenu>
+        {items.map((item, i) => (
+          <SidebarMenuItem>
+            <SidebarMenuButton
+              asChild
+              isActive={location.pathname == item.url}
+              key={i}
+            >
+              <Link to={item.url}>
+                {item.icon && <item.icon />}
+                {item.title}
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        ))}
+      </SidebarMenu>
+    </SidebarContent>
+  );
 }
