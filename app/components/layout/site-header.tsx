@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { SidebarTrigger } from "@/components/ui/sidebar";
-import { Icons } from "./icons";
+import { Icons } from "../icons";
 
 export function SiteHeader() {
   return (

@@ -35,11 +35,9 @@ export function AppSidebar() {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <div>
-                <Icons.account />
-                <span className="text-base font-semibold">Vionis</span>
-              </div>
+            <SidebarMenuButton className="hover:bg-inherit active:bg-inherit">
+              <Icons.account />
+              <span className="text-base font-semibold">Vionis</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
@@ -66,6 +64,7 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <SidebarRail />
     </Sidebar>
   );
 }
